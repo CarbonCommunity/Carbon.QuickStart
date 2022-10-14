@@ -41,24 +41,24 @@ del %root%\steam.zip
 
 rem Download the server
 steamcmd.exe +login anonymous ^
-			 +force_install_dir "%server%" ^
-			 +app_update 258550 ^
-			 validate ^
-			 +quit
+             +force_install_dir "%server%" ^
+             +app_update 258550 ^
+             validate ^
+             +quit
 
 rem Start up the server
 cd %server%
 RustDedicated.exe -nographics -batchmode -logs -silent-crashes ^
-				  -server.hostname "%name%" ^
-				  -server.identity "%identity%" ^
-				  -server.port %port% ^
-				  -server.netlog ^
-				  -server.saveinterval 400 ^
-				  -rcon.port %rconPort% ^
-				  -rcon.password "%rconPassword%" ^
-				  -rcon.web true ^
-				  -server.maxplayers 50 ^
-				  -chat.serverlog 1 ^
-				  +server.seed %seed% ^
-				  +server.worldsize %size% ^
-				  -logfile "%identity%_log.txt" ^
+                  -server.hostname "%name%" ^
+                  -server.identity "%identity%" ^
+                  -server.port %port% ^
+                  -server.netlog ^
+                  -server.saveinterval 400 ^
+                  -rcon.port %rconPort% ^
+                  -rcon.password "%rconPassword%" ^
+                  -rcon.web true ^
+                  -server.maxplayers 50 ^
+                  -chat.serverlog 1 ^
+                  +server.seed %seed% ^
+                  +server.worldsize %size% ^
+                  -logfile "%identity%_log.txt" ^
