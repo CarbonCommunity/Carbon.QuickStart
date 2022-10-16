@@ -1,0 +1,10 @@
+*          text=auto
+
+*.bat      text eol=crlf
+*.cs       text eol=crlf diff=csharp
+*.dll      binary
+*.exe      binary
+*.json     text eol=crlf
+*.sh       text eol=lf
+*.so       binary
+*.yml      text eol=crlf
