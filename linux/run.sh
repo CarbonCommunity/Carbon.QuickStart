@@ -19,7 +19,7 @@ SERVER_RCON_PASS=mypasslol
 BASE="$(cd -- "$(dirname "$0")" >/dev/null 2>&1; pwd -P)"
 RUST_HOME="${BASE}/server"
 
-CARBON_DL="http://github.com/CarbonCommunity/Carbon.Core/releases/download/develop_build/Carbon.Patch-Unix.zip"
+CARBON_DL="https://github.com/CarbonCommunity/Carbon.Core/releases/download/develop_build/Carbon.DebugUnix.tar.gz"
 
 # Install steamcmd and some generic dependencies
 sudo -- bash <<EOF
