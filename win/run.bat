@@ -3,7 +3,7 @@
 SET root=%cd%
 SET server=%root%\server
 SET steam=%root%\steam
-SET url=http://github.com/CarbonCommunity/Carbon.Core/releases/download/develop_build/Carbon.Patch.zip
+SET url=https://github.com/CarbonCommunity/Carbon.Core/releases/download/develop_build/Carbon.Debug.zip
 SET steamCmd=https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip
 
 rem Settings
