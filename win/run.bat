@@ -48,7 +48,7 @@ steamcmd.exe +login anonymous ^
 
 rem Start up the server
 cd %server%
-RustDedicated.exe -nographics -batchmode -logs -silent-crashes ^
+start "RustDedicated" /B RustDedicated.exe -nographics -batchmode -logs -silent-crashes ^
                   -server.hostname "%name%" ^
                   -server.identity "%identity%" ^
                   -server.port %port% ^
