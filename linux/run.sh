@@ -8,10 +8,11 @@ set -e
 ### USER SETTINGS ##############################################################
 SERVER_NAME="My Carbon Test Server"
 
-SERVER_MAP_SIZE=1250
-SERVER_MAP_SEED=1337
+SERVER_MAP_SIZE=1000
+SERVER_MAP_SEED=12345
 
-SERVER_PORT=28505
+SERVER_PORT=28507
+SERVER_QUERY=28505
 SERVER_RCON_PORT=28506
 SERVER_RCON_PASS=mypasslol
 
@@ -24,7 +25,7 @@ export TERM=xterm
 
 cd "${RUST_HOME}"
 source "${RUST_HOME}/carbon/tools/environment.sh"
-"${RUST_HOME}/RustDedicated" -batchmode \
-	-server.port ${SERVER_PORT} -server.hostname "${SERVER_NAME}" \
-	-rcon.port ${SERVER_RCON_PORT} -rcon.password "${SERVER_RCON_PASS}" -rcon.web true \
-	+server.seed ${SERVER_MAP_SEED} +server.worldsize ${SERVER_MAP_SIZE}
+"${RUST_HOME}/RustDedicated" -batchmode +server.secure 1 +server.tickrate 30 +server.identity carbon \
+	+server.port ${SERVER_PORT} +server.queryport ${SERVER_QUERY} +rcon.port ${SERVER_RCON_PORT} \
+	+server.hostname "${SERVER_NAME}" +server.seed ${SERVER_MAP_SEED} +server.worldsize ${SERVER_MAP_SIZE} \
+	+rcon.password "${SERVER_RCON_PASS}" +rcon.web true +server.maxplayers 8
