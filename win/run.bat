@@ -26,18 +26,18 @@ powershell -Command "(New-Object Net.WebClient).DownloadFile('%url%', '%root%\ca
 
 rem Extract it in the server folder
 cd %server%
-powershell -Command "Expand-Archive '%root%\carbon.zip' -DestinationPath '%server%'"
+powershell -Command "Expand-Archive '%root%\carbon.zip' -DestinationPath '%server%'" -Force
 
 rem Download SteamCMD
 powershell -Command "(New-Object Net.WebClient).DownloadFile('%steamCmd%', '%root%\steam.zip')"
 
 rem Extract it in the server folder
 cd %steam%
-powershell -Command "Expand-Archive '%root%\steam.zip' -DestinationPath '%steam%'"
+powershell -Command "Expand-Archive '%root%\steam.zip' -DestinationPath '%steam%'" -Force
 
 rem Cleanup
-del '%root%\carbon.zip'
-del '%root%\steam.zip'
+del "%root%\carbon.zip"
+del "%root%\steam.zip"
 
 rem Download the server
 steamcmd.exe +login anonymous ^
