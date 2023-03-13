@@ -19,35 +19,42 @@ SET rconPassword=mypasslol
 
 rem Ensure folders are created
 if not exist "%server%" mkdir "%server%"
-if not exist "%steam%" mkdir "%steam%"
 
 rem Download latest development build of Carbon
+echo Downloading Carbon
 powershell -Command "(New-Object Net.WebClient).DownloadFile('%url%', '%root%\carbon.zip')"
 
 rem Extract it in the server folder
 cd %server%
+echo Extracting Carbon
 powershell -Command "Expand-Archive '%root%\carbon.zip' -DestinationPath '%server%'" -Force
 
-rem Download SteamCMD
-powershell -Command "(New-Object Net.WebClient).DownloadFile('%steamCmd%', '%root%\steam.zip')"
 
-rem Extract it in the server folder
-cd %steam%
-powershell -Command "Expand-Archive '%root%\steam.zip' -DestinationPath '%steam%'" -Force
+rem Download & extract Steam it in the steam folder
+if not exist "%steam%" (
+	mkdir "%steam%"
+	cd "%steam%"
+	
+	echo Downloading Steam
+	powershell -Command "(New-Object Net.WebClient).DownloadFile('%steamCmd%', '%root%\steam.zip')"
+	echo Extracting Steam
+	powershell -Command "Expand-Archive '%root%\steam.zip' -DestinationPath '%steam%'" -Force
+)
 
 rem Cleanup
 del "%root%\carbon.zip"
 del "%root%\steam.zip"
 
 rem Download the server
-steamcmd.exe +login anonymous ^
-             +force_install_dir "%server%" ^
+cd "%steam%"
+steamcmd.exe +force_install_dir %server% ^
+			 +login anonymous ^
              +app_update 258550 ^
              validate ^
-             +quit
+             +quit ^
 
 rem Start up the server
-cd %server%
+cd "%server%"
 RustDedicated.exe -nographics -batchmode -logs -silent-crashes ^
                   -server.hostname "%name%" ^
                   -server.identity "%identity%" ^
