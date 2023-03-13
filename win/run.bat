@@ -18,26 +18,26 @@ SET rconPort=28506
 SET rconPassword=mypasslol
 
 rem Ensure folders are created
-if not exist %server% mkdir %server%
-if not exist %steam% mkdir %steam%
+if not exist "%server%" mkdir "%server%"
+if not exist "%steam%" mkdir "%steam%"
 
 rem Download latest development build of Carbon
 powershell -Command "(New-Object Net.WebClient).DownloadFile('%url%', '%root%\carbon.zip')"
 
 rem Extract it in the server folder
 cd %server%
-powershell -Command "Expand-Archive %root%\carbon.zip -DestinationPath %server%"
+powershell -Command "Expand-Archive '%root%\carbon.zip' -DestinationPath '%server%'"
 
 rem Download SteamCMD
 powershell -Command "(New-Object Net.WebClient).DownloadFile('%steamCmd%', '%root%\steam.zip')"
 
 rem Extract it in the server folder
 cd %steam%
-powershell -Command "Expand-Archive %root%\steam.zip -DestinationPath %steam%"
+powershell -Command "Expand-Archive '%root%\steam.zip' -DestinationPath '%steam%'"
 
 rem Cleanup
-del %root%\carbon.zip
-del %root%\steam.zip
+del '%root%\carbon.zip'
+del '%root%\steam.zip'
 
 rem Download the server
 steamcmd.exe +login anonymous ^
