@@ -1,6 +1,8 @@
-![Carbon](https://i.imgur.com/sG6X07A.jpg)
+![Carbon](https://codefling.com/uploads/monthly_2023_03/image.thumb.png.276343ad1b15a658368a7ae6e252172f.png)
 
-Carbon is an anticipated system designed for lower-to-higher-end **Rust** servers with top priority for best performance and memory optimization, which is compatible with most - if not all - **Oxide** plugins currently out in the market, and a lot more features!
+Carbon is a self-updating, lightweight, intelligent mod loader for Rust utilizing the latest C# and Harmony for the best performance and stability possible. Its robust framework and backward compatibility with Oxide plugins make it the ultimate replacement for those wanting better functionality and performance from their plugins!
+
+Carbon has all the creature comforts you need to run your server, such as a permission system, user system, and so much more. Carbon is developed by experienced developers and server owners working to take the tedium out of hosting servers and make configuration and setup seamless with an integrated GUI in-game to manage everything!
 
 Join our official [Discord server][discord] for more frequent development info, discussions and future plans.
 
