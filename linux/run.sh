@@ -6,7 +6,7 @@
 set -e
 
 ### USER SETTINGS ##############################################################
-SERVER_NAME="My Carbon Test Server"
+SERVER_NAME="CARBON | env:linux branch:develop"
 
 SERVER_MAP_SIZE=1000
 SERVER_MAP_SEED=12345
@@ -28,4 +28,4 @@ source "${RUST_HOME}/carbon/tools/environment.sh"
 "${RUST_HOME}/RustDedicated" -batchmode +server.secure 1 +server.tickrate 30 +server.identity carbon \
 	+server.port ${SERVER_PORT} +server.queryport ${SERVER_QUERY} +rcon.port ${SERVER_RCON_PORT} \
 	+server.hostname "${SERVER_NAME}" +server.seed ${SERVER_MAP_SEED} +server.worldsize ${SERVER_MAP_SIZE} \
-	+rcon.password "${SERVER_RCON_PASS}" +rcon.web true +server.maxplayers 8
+	+rcon.password "${SERVER_RCON_PASS}" +rcon.web true +server.maxplayers 8 +app.port 1-
