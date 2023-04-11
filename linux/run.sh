@@ -6,7 +6,7 @@
 set -e
 
 ### USER SETTINGS ##############################################################
-SERVER_NAME="CARBON | env:linux branch:develop"
+SERVER_NAME="CARBON | env:linux branch:preview"
 
 SERVER_MAP_SIZE=1000
 SERVER_MAP_SEED=12345

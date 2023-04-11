@@ -6,7 +6,7 @@
 set -e
 
 ### DON'T CHANGE ANYTHING BELOW ################################################
-CARBON_DL=https://github.com/CarbonCommunity/Carbon.Core/releases/download/develop_build/Carbon.Linux.Debug.tar.gz
+CARBON_DL=https://github.com/CarbonCommunity/Carbon.Core/releases/download/preview_build/Carbon.Linux.Debug.tar.gz
 BASE="$(cd -- "$(dirname "$0")" >/dev/null 2>&1; pwd -P)"
 RUST_HOME="${BASE}/server"
 
