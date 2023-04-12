@@ -1,3 +1,3 @@
 @echo off
 
-update_develop.bat production %1
+update_preview.bat production %1
