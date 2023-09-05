@@ -21,12 +21,13 @@ if "%1" EQU "" (
 SET root=%cd%
 SET server=%root%\server
 SET steam=%root%\steam
-SET url=https://github.com/CarbonCommunity/Carbon.Core/releases/download/%TAG%_build/Carbon.Windows.%BUILD%.zip	
+SET url=https://github.com/CarbonCommunity/Carbon/releases/download/%TAG%_build/Carbon.Windows.%BUILD%.zip	
 SET steamCmd=https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip
 
-echo Server directory: %server%
-echo Steam directory: %steam%
-echo Root directory: %root%
+echo * Server directory: %server%
+echo * Steam directory: %steam%
+echo * Root directory: %root%
+echo * Carbon: %url%
 
 if not "%1" EQU "" (
 	set server=%root%\%2
