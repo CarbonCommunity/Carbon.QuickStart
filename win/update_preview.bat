@@ -43,7 +43,7 @@ powershell -Command "(New-Object Net.WebClient).DownloadFile('%url%', '%root%\ca
 rem Extract it in the server folder
 cd %server%
 echo Extracting Carbon
-powershell -Command "Expand-Archive '%root%\carbon.zip' -DestinationPath '%server%\server'" -Force
+powershell -Command "Expand-Archive '%root%\carbon.zip' -DestinationPath '%server%'" -Force
 
 rem Download & extract Steam it in the steam folder
 if not exist "%steam%" (
@@ -63,7 +63,7 @@ del "%root%\carbon.zip"
 
 rem Download the server
 cd "%steam%"
-steamcmd.exe +force_install_dir "%server%\server" ^
+steamcmd.exe +force_install_dir "%server%" ^
 			 +login anonymous ^
              +app_update 258550 ^
 			 -beta %BRANCH% ^
