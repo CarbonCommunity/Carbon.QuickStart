@@ -1,3 +1,3 @@
 @echo off
 
-update_preview.bat edge %1
+update_preview.bat edge server
