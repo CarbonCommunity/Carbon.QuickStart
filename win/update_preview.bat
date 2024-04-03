@@ -12,26 +12,22 @@ if "%TAG%" EQU "production" (
 	SET BUILD=Debug
 )
 
-if "%1" EQU "" (
+if "%2" EQU "" (
 	set BRANCH=public
 ) else (
-	set BRANCH=%3
+	set BRANCH=%2
 )
 
 SET root=%cd%
 SET server=%root%\server
 SET steam=%root%\steam
-SET url=https://github.com/CarbonCommunity/Carbon/releases/download/%TAG%_build/Carbon.Windows.%BUILD%.zip	
+SET url=https://github.com/CarbonCommunity/Carbon.Core/releases/download/%TAG%_build/Carbon.Windows.%BUILD%.zip	
 SET steamCmd=https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip
 
-echo * Server directory: %server%
-echo * Steam directory: %steam%
-echo * Root directory: %root%
-echo * Carbon: %url%
-
-if not "%1" EQU "" (
-	set server=%root%\%2
-)
+echo Server directory: %server%
+echo Steam directory: %steam%
+echo Root directory: %root%
+echo Branch: %BRANCH%
 
 rem Ensure folders are created
 if not exist "%server%" mkdir "%server%"
@@ -63,6 +59,7 @@ del "%root%\carbon.zip"
 
 rem Download the server
 cd "%steam%"
+echo Downloading Rust server on %BRANCH% branch...
 steamcmd.exe +force_install_dir "%server%" ^
 			 +login anonymous ^
              +app_update 258550 ^
