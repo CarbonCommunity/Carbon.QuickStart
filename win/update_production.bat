@@ -1,3 +1,3 @@
 @echo off
 
-update_preview.bat production server
+update_preview.bat production public server
