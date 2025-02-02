@@ -9,6 +9,6 @@ set -e
 BASE="$(cd -- "$(dirname "$0")" >/dev/null 2>&1; pwd -P)"
 RUST_HOME="${BASE}/server"
 
-/usr/games/steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir "${RUST_HOME}" \
+steamcmd +@sSteamCmdForcePlatformType linux +force_install_dir "${RUST_HOME}" \
 	+login anonymous +app_info_update 1 +app_update 258550 validate +quit
 	
